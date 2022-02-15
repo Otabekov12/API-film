@@ -4,7 +4,7 @@ const elFilmList = findElement('.films__list');
 
 const API_KEY = '78433eb'
 
-fetch(`http://www.omdbapi.com/?apikey=${API_KEY}&s=films`)
+fetch(`https://www.omdbapi.com/?apikey=${API_KEY}&s=films`)
 .then(response => response.json())
 .then(filmsApi =>
     
@@ -41,7 +41,7 @@ fetch(`http://www.omdbapi.com/?apikey=${API_KEY}&s=films`)
     elForm.addEventListener('submit', (evt) => {
         evt.preventDefault()
         if(elInput.value != '') {
-            fetch(`http://www.omdbapi.com/?apikey=${API_KEY}&s=${elInput.value}`)
+            fetch(`https://www.omdbapi.com/?apikey=${API_KEY}&s=${elInput.value}`)
             .then(response => response.json())
             .then(filmsApi =>
                 renderFilmApi(filmsApi, elFilmList)
